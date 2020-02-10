@@ -34,6 +34,10 @@ RUN pip install detect-secrets
 # trufflehog
 RUN pip install trufflehog
 
+# copy app files
+WORKDIR /usr/src/app
+COPY . .
+
 #####################
 # RUN APP
 #####################
