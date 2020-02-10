@@ -8,7 +8,7 @@ detectors = [
 access_token='env'
 
 [monitors]
-    organizations = []
+    organizations = ['brightcove', 'BrightcoveOS', 'BrightcovePS', 'zencoder']
     users = []
     repos = []
 
@@ -17,6 +17,3 @@ access_token='env'
     host="0.0.0.0"
 
 [notifiers.console]
-
-[notifiers.slack_webhook]
-    webhook_url=''
