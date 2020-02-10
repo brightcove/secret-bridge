@@ -5,7 +5,7 @@ LABEL maintainer="labs@duo.com"
 #####################
 # IMG PREP
 #####################
-RUN apk add git make bash grep
+RUN apk add curl git make bash grep
 WORKDIR /usr/src/app
 
 #####################
