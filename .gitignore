@@ -125,3 +125,6 @@ dmypy.json
 
 .vscode/
 state.json
+
+# PyCharm project files
+.idea/
