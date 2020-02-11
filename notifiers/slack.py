@@ -7,12 +7,13 @@ class SlackWebhookNotifier(Notifier):
     notifier_id = 'slack_webhook'
 
     def __init__(self, config):
-        if config['webhook_url'] is None:
+        if config['webhook_url'] == 'env':
+            config['webhook_url'] = str(getenv('SLACK_WEBHOOK_URL'))
+
+        if not config['webhook_url']:
             raise Exception("webhook_url not found in config file")
-        elif config['webhook_url'] == 'env':
-            self._webhook_url = str(getenv('SLACK_WEBHOOK_URL'))
-        else:
-            self._webhook_url = config['webhook_url']
+
+        self._webhook_url = config['webhook_url']
 
     def process(self, findings, detector_name):
         """Send a list of findings via Slack incoming webhook."""
