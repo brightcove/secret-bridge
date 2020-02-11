@@ -17,3 +17,6 @@ access_token='env'
     host="0.0.0.0"
 
 [notifiers.console]
+
+[notifiers.slack_webhook]
+    webhook_url='env'
