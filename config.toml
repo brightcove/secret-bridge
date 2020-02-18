@@ -1,5 +1,5 @@
 detectors = [
-    "detect-secrets",
+#    "detect-secrets",
     "git-secrets",
 #    "trufflehog"
 ]
