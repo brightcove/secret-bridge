@@ -31,6 +31,11 @@ class GitSecrets(Detector):
         """
         self.logger.info("instantiating git-secrets")
         subprocess.run([self._binary_path, "--register-aws"], cwd=repo_dir, capture_output=True)
+
+        # add whitelisted regex patterns (BC specific)
+        # GO package lock files
+        subprocess.run([self._binary_path, "--add", "--allowed", "Gopkg.lock:.*"], cwd=repo_dir, capture_output=True)
+
         if file_obj is not None:
             sp = subprocess.run([self._binary_path, "--scan", file_obj.filename], cwd=repo_dir, capture_output=True)
         else:
