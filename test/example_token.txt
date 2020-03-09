@@ -1,5 +1,6 @@
 # A file containing example API tokens
 # Used to perform a service test of secret-bridge
+
 <GetSessionTokenResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
   <GetSessionTokenResult>
     <Credentials>
